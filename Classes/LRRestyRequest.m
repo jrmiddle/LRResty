@@ -111,7 +111,7 @@
     if (![self isFinished]) {
       [self cancelImmediately];
       
-      dispatch_sync(dispatch_get_main_queue(), ^{
+      dispatch_async(dispatch_get_main_queue(), ^{
         block(self);
       });
     }
